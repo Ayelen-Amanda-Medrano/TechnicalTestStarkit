@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{D0B23936-D16A-4D45-B0D9-9626C40A86B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkit.Client.Api", "Starkit.Client.Api\Starkit.Client.Api.csproj", "{4F74C9B9-80F1-4BC7-83F3-2747C0CD7CAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkit.Client.Api.Contracts", "Starkit.Client.Api.Contracts\Starkit.Client.Api.Contracts.csproj", "{CB50C59E-E8C5-4F81-95C0-AB873E115B8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkit.Client.Application", "Starkit.Client.Application\Starkit.Client.Application.csproj", "{82D429BF-8E90-4AFA-949C-03A5B3259D70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkit.Client.Domain", "Starkit.Client.Domain\Starkit.Client.Domain.csproj", "{5066AA86-BE46-4D82-8601-D7A05BE07965}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starkit.Client.Infrastructure", "Starkit.Client.Infrastructure\Starkit.Client.Infrastructure.csproj", "{94940978-C46C-4D0F-8943-EB85F8DCD853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D0B23936-D16A-4D45-B0D9-9626C40A86B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0B23936-D16A-4D45-B0D9-9626C40A86B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0B23936-D16A-4D45-B0D9-9626C40A86B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0B23936-D16A-4D45-B0D9-9626C40A86B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F74C9B9-80F1-4BC7-83F3-2747C0CD7CAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F74C9B9-80F1-4BC7-83F3-2747C0CD7CAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F74C9B9-80F1-4BC7-83F3-2747C0CD7CAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F74C9B9-80F1-4BC7-83F3-2747C0CD7CAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB50C59E-E8C5-4F81-95C0-AB873E115B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB50C59E-E8C5-4F81-95C0-AB873E115B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB50C59E-E8C5-4F81-95C0-AB873E115B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB50C59E-E8C5-4F81-95C0-AB873E115B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D429BF-8E90-4AFA-949C-03A5B3259D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D429BF-8E90-4AFA-949C-03A5B3259D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D429BF-8E90-4AFA-949C-03A5B3259D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D429BF-8E90-4AFA-949C-03A5B3259D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5066AA86-BE46-4D82-8601-D7A05BE07965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5066AA86-BE46-4D82-8601-D7A05BE07965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5066AA86-BE46-4D82-8601-D7A05BE07965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5066AA86-BE46-4D82-8601-D7A05BE07965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94940978-C46C-4D0F-8943-EB85F8DCD853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94940978-C46C-4D0F-8943-EB85F8DCD853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94940978-C46C-4D0F-8943-EB85F8DCD853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94940978-C46C-4D0F-8943-EB85F8DCD853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
