@@ -8,7 +8,7 @@ using Starkit.Client.Domain.Entities;
 using System.Net;
 
 [ApiController]
-[Route("/clients")]
+[Route("/api/names")]
 public class ClientController : ControllerBase
 {
     private readonly ILogger<ClientController> _logger;
@@ -20,7 +20,7 @@ public class ClientController : ControllerBase
         _clientService = clientService;
     }
 
-    [HttpGet("filter")]
+    [HttpGet]
     [ProducesResponseType(typeof(GenericResponse<Client>), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]

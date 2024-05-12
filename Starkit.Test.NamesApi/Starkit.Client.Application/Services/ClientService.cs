@@ -35,7 +35,7 @@ public class ClientService : IClientService
 
     }
 
-    private Expression<Func<Client, bool>> CombineFilters(Expression<Func<Client, bool>> filter1, Expression<Func<Client, bool>> filter2)
+    private static Expression<Func<Client, bool>> CombineFilters(Expression<Func<Client, bool>> filter1, Expression<Func<Client, bool>> filter2)
     {
         var parameter = Expression.Parameter(typeof(Client));
 

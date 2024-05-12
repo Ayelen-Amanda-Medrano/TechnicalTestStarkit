@@ -1,7 +1,6 @@
 ﻿namespace Starkit.Client.Application.Repositories;
 
 using Microsoft.Extensions.Options;
-using Starkit.Client.Api.Contracts.Client;
 using Starkit.Client.Application.Interfaces;
 using Starkit.Client.Application.Options;
 using Starkit.Client.Domain;
