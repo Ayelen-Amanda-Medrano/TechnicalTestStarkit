@@ -5,7 +5,7 @@ namespace Starkit.Client.Api.Contracts.Enums;
 public enum Gender
 {
     [EnumMember(Value = "Male")]
-    M,
+    M = 1,
     [EnumMember(Value = "Female")]
     F,
 }
