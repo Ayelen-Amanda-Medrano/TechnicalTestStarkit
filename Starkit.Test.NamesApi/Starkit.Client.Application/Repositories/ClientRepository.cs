@@ -6,6 +6,8 @@ using Starkit.Client.Application.Interfaces;
 using Starkit.Client.Application.Options;
 using Starkit.Client.Domain;
 using Starkit.Client.Domain.Entities;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text.Json;
 
 public class ClientRepository : IClientRepository
@@ -16,12 +18,17 @@ public class ClientRepository : IClientRepository
         _jsonFilesOptions = jsonFilesOptions;
     }
 
-    public GenericResponse<Client> GetClients()
+    public GenericResponse<Client> GetClients(Expression<Func<Client, bool>> filterExpression)
     {
         string jsonData = File.ReadAllText(_jsonFilesOptions.Value.Names);
 
         var clients = JsonSerializer.Deserialize<GenericResponse<Client>>(jsonData, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
-        return new GenericResponse<Client>();
+        var clientsFiltered = clients!.Response.AsQueryable().Where(filterExpression).ToArray();
+
+        return new GenericResponse<Client>()
+        {
+            Response = clientsFiltered,
+        };
     }
 }
