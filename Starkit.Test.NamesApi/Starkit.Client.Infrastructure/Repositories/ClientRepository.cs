@@ -1,4 +1,4 @@
-﻿namespace Starkit.Client.Application.Repositories;
+﻿namespace Starkit.Client.Infraestructure.Repositories;
 
 using Microsoft.Extensions.Options;
 using Starkit.Client.Application.Interfaces;

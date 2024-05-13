@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Starkit.Client.Api.Contracts\Starkit.Client.Api.Contracts.csproj" />
-    <ProjectReference Include="..\Starkit.Client.Application\Starkit.Client.Application.csproj" />
+    <ProjectReference Include="..\Starkit.Client.Infrastructure\Starkit.Client.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
