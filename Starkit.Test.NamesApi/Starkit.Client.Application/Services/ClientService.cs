@@ -6,6 +6,8 @@ using Microsoft.Extensions.Logging;
 using Starkit.Client.Domain.Entities;
 using Starkit.Client.Domain;
 using System.Linq.Expressions;
+using Starkit.Client.Application.Exceptions;
+using System.Net;
 
 public class ClientService : IClientService
 {
@@ -19,20 +21,36 @@ public class ClientService : IClientService
     }
     public GenericResponse<Client> GetClientsAsync(ClientFilters filters)
     {
-        Expression<Func<Client, bool>> defaultFilters = x => true;
+        try
+        {
+            Expression<Func<Client, bool>> filter = BuildFilter(filters);
+            return _clientRepository.GetClients(filter);
+        }
+        catch(Exception ex)
+        {
+            var errorMessage = "Error getting clients.";
+            var error = $"Error: {errorMessage} - Exception message: {ex.Message}";
+
+            _logger.LogError(error);
+            throw new ServiceException(HttpStatusCode.InternalServerError, error);
+        }
+    }
+
+    private static Expression<Func<Client, bool>> BuildFilter(ClientFilters filters)
+    {
+        Expression<Func<Client, bool>> filter = x => true;
 
         if (filters.Gender != null)
         {
-            defaultFilters = CombineFilters(defaultFilters, x => x.Gender == filters.Gender);
+            filter = CombineFilters(filter, x => x.Gender == filters.Gender);
         }
 
         if (filters.Name != null)
         {
-            defaultFilters = CombineFilters(defaultFilters, x => x.Name.StartsWith(filters.Name));
+            filter = CombineFilters(filter, x => x.Name.StartsWith(filters.Name));
         }
 
-        return _clientRepository.GetClients(defaultFilters);
-
+        return filter;
     }
 
     private static Expression<Func<Client, bool>> CombineFilters(Expression<Func<Client, bool>> filter1, Expression<Func<Client, bool>> filter2)

@@ -20,8 +20,8 @@ public class ClientRepository : IClientRepository
     public GenericResponse<Client> GetClients(Expression<Func<Client, bool>> filterExpression)
     {
         string jsonData = File.ReadAllText(_jsonFilesOptions.Value.Names);
-
-        var clients = JsonSerializer.Deserialize<GenericResponse<Client>>(jsonData, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+        var jsonSerializerOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+        var clients = JsonSerializer.Deserialize<GenericResponse<Client>>(jsonData, jsonSerializerOptions);
 
         var clientsFiltered = clients!.Response.AsQueryable().Where(filterExpression).ToArray();
 
