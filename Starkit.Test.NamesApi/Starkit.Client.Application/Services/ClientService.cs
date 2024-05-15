@@ -17,7 +17,7 @@ public class ClientService : IClientService
         _logger = logger;
         _clientRepository = clientRepository;
     }
-    public GenericResponse<Client> GetClientsAsync(ClientFilters filters)
+    public GenericResponse<Client> GetClients(ClientFilters filters)
     {
         Expression<Func<Client, bool>> filter = BuildFilter(filters);
 

@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Starkit.Client.Api\Starkit.Client.Api.csproj" />
+  </ItemGroup>
+
 </Project>

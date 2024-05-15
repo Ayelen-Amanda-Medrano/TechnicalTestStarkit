@@ -6,5 +6,5 @@ using Starkit.Client.Domain.Entities;
 
 public interface IClientService
 {
-    GenericResponse<Client> GetClientsAsync(ClientFilters filters);
+    GenericResponse<Client> GetClients(ClientFilters filters);
 }

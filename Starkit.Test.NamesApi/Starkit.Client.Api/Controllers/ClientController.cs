@@ -25,11 +25,11 @@ public class ClientController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GenericResponse<Client>))]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public IActionResult GetClientsAsync([FromQuery] ClientFilters filters)
+    public IActionResult GetClients([FromQuery] ClientFilters filters)
     {
-        _logger.LogInformation("Calling to clients service");
+        _logger.LogInformation("Calling clients service...");
 
-        var response = _clientService.GetClientsAsync(filters);
+        var response = _clientService.GetClients(filters);
 
         return Ok(response);
     }
