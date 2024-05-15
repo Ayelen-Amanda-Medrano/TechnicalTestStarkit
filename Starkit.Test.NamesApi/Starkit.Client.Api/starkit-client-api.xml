@@ -4,7 +4,7 @@
 		<name>Starkit.Client.Api</name>
 	</assembly>
 	<members>
-		<member name="M:Starkit.Client.Api.Controllers.ClientController.GetClientsAsync(Starkit.Client.Api.Contracts.Client.ClientFilters)">
+		<member name="M:Starkit.Client.Api.Controllers.ClientController.GetClients(Starkit.Client.Api.Contracts.Client.ClientFilters)">
 			<summary>Gets all filtered clients.</summary>
 			<remarks>
 				In this operation, the client is obtained based on the filters sent by parameter.
