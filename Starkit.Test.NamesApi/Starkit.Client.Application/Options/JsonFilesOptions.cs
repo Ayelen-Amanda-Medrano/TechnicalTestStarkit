@@ -5,5 +5,5 @@ using System.ComponentModel.DataAnnotations;
 public class JsonFilesOptions
 {
     [Required]
-    public string Names { get; set; } = string.Empty;
+    public string Clients { get; set; } = string.Empty;
 }

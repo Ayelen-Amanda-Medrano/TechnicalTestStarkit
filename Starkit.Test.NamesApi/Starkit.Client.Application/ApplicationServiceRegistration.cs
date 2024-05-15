@@ -8,7 +8,6 @@ public static class ApplicationServiceRegistration
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        // Services
         services.AddTransient<IClientService, ClientService>();
 
         return services;

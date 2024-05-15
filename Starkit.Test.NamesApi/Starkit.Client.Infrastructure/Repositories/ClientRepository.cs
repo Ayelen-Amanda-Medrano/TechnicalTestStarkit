@@ -19,7 +19,7 @@ public class ClientRepository : IClientRepository
 
     public GenericResponse<Client> GetClients(Expression<Func<Client, bool>> filterExpression)
     {
-        string jsonData = File.ReadAllText(_jsonFilesOptions.Value.Names);
+        string jsonData = File.ReadAllText(_jsonFilesOptions.Value.Clients);
         var jsonSerializerOptions = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
         var clients = JsonSerializer.Deserialize<GenericResponse<Client>>(jsonData, jsonSerializerOptions);
 
