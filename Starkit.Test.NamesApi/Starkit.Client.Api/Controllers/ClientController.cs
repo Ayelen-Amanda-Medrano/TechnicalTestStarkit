@@ -6,7 +6,6 @@ using Starkit.Client.Application.Exceptions;
 using Starkit.Client.Application.Interfaces;
 using Starkit.Client.Domain;
 using Starkit.Client.Domain.Entities;
-using System.Net;
 
 [ApiController]
 [Route("/api/names")]

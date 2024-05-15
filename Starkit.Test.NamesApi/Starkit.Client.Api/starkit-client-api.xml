@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>Starkit.Client.Api</name>
+	</assembly>
+	<members>
+		<member name="M:Starkit.Client.Api.Controllers.ClientController.GetClientsAsync(Starkit.Client.Api.Contracts.Client.ClientFilters)">
+			<summary>Gets all filtered clients.</summary>
+			<remarks>
+				In this operation, the client is obtained based on the filters sent by parameter.
+			</remarks>
+			<param name="filters">
+				A JSON object containing client filters.
+				### ClientFilters
+				* **Gender**: Indicates the gender of a client. Female: `F` | Male: `M`.
+				* **Name**: Indicates the name of a client.
+			</param>
+			<response code="200">
+				### Returns an array of clients.
+				### Client
+				* **Id**: Indicates the unique identifier of a client.
+				* **Name**: Indicates the name of a client.
+				* **LastName**: Indicates the last name of a client.
+				* **Gender**: Indicates the gender of a client. Female: `F` | Male: `M`.
+				* **CountryCode**: Indicates the country of a client. Alpha-3 Code ISO 3166.
+			</response>
+			<response code="400">A validation error in any of the input parameters returned a `Bad Request` result.</response>
+			<response code="500">An `Internal Server Error` was returned from the server.</response>
+		</member>
+	</members>
+</doc>

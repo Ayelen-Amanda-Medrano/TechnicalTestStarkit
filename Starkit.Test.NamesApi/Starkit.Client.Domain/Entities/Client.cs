@@ -8,6 +8,5 @@ public class Client
     public string Name { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string Gender { get; set; } = string.Empty;
-    public int Age { get; set; }
-    public string Country { get; set; } = string.Empty;
+    public string CountryCode { get; set; } = string.Empty;
 }

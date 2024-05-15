@@ -1,11 +1,9 @@
-﻿using Starkit.Client.Api.Contracts.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿namespace Starkit.Client.Api.Contracts.Client;
 
-namespace Starkit.Client.Api.Contracts.Client;
+using Starkit.Client.Api.Contracts.Enums;
 
 public class ClientFilters
 {
-    [EnumDataType(typeof(Gender))]
-    public string? Gender { get; set; }
+    public Gender? Gender { get; set; }
     public string? Name { get; set; }
 }

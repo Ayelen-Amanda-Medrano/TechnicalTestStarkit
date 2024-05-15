@@ -42,7 +42,7 @@ public class ClientService : IClientService
 
         if (filters.Gender != null)
         {
-            filter = CombineFilters(filter, x => x.Gender == filters.Gender);
+            filter = CombineFilters(filter, x => x.Gender == filters.Gender.ToString());
         }
 
         if (filters.Name != null)
