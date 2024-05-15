@@ -6,8 +6,6 @@ using Microsoft.Extensions.Logging;
 using Starkit.Client.Domain.Entities;
 using Starkit.Client.Domain;
 using System.Linq.Expressions;
-using Starkit.Client.Application.Exceptions;
-using System.Net;
 
 public class ClientService : IClientService
 {
@@ -21,19 +19,10 @@ public class ClientService : IClientService
     }
     public GenericResponse<Client> GetClientsAsync(ClientFilters filters)
     {
-        try
-        {
-            Expression<Func<Client, bool>> filter = BuildFilter(filters);
-            return _clientRepository.GetClients(filter);
-        }
-        catch(Exception ex)
-        {
-            var errorMessage = "Error getting clients.";
-            var error = $"Error: {errorMessage} - Exception message: {ex.Message}";
+        Expression<Func<Client, bool>> filter = BuildFilter(filters);
 
-            _logger.LogError(error);
-            throw new ServiceException(HttpStatusCode.InternalServerError, error);
-        }
+        _logger.LogInformation("Calling the clients database");
+        return _clientRepository.GetClients(filter);
     }
 
     private static Expression<Func<Client, bool>> BuildFilter(ClientFilters filters)
