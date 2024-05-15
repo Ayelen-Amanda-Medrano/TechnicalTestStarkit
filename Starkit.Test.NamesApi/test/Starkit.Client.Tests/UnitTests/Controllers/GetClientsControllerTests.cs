@@ -1,4 +1,4 @@
-﻿namespace Starkit.Client.UnitTests.Controllers;
+﻿namespace Starkit.Client.Tests.UnitTests.Controllers;
 
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
@@ -22,7 +22,7 @@ public class GetClientsControllerTests
     {
         _logger = Substitute.For<ILogger<ClientController>>();
         _clientService = Substitute.For<IClientService>();
-        _controller =  new ClientController(_logger, _clientService);
+        _controller = new ClientController(_logger, _clientService);
     }
 
     [Fact]

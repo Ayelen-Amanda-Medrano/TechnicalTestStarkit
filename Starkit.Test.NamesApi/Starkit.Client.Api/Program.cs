@@ -9,3 +9,10 @@ var app = builder.Build();
 app.Configure();
 
 app.Run();
+
+public partial class Program
+{
+    protected Program()
+    {
+    }
+}

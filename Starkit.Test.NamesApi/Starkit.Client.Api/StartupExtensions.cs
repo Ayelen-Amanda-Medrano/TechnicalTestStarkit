@@ -22,7 +22,8 @@ public static class StartupExtensions
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Client API", Version = "v1" });
 
-            c.IncludeXmlComments("starkit-client-api.xml");
+            if (!builder.Environment.IsEnvironment("Test"))
+                c.IncludeXmlComments("starkit-client-api.xml");
         });
 
         builder.Services.Configure<JsonFilesOptions>(builder.Configuration.GetSection("JsonFilesOptions"));

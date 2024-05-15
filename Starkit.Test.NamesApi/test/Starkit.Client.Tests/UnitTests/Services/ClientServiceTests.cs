@@ -1,4 +1,4 @@
-﻿namespace Starkit.Client.UnitTests.Services;
+﻿namespace Starkit.Client.Tests.UnitTests.Services;
 
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
